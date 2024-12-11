@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_campuslink/pages/feed_page.dart';
 import 'package:flutter_campuslink/pages/login_page.dart';
 import 'package:flutter_campuslink/pages/cadastro_page.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/login',
       routes: {
+        '/feed': (context) => const FeedPage(),
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegistrationPage(),
       },

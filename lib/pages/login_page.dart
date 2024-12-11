@@ -42,7 +42,6 @@ class _Logo extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // FlutterLogo(size: isSmallScreen ? 100 : 200),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text(
@@ -151,30 +150,52 @@ class __FormContentState extends State<_FormContent> {
             ),
             _gap(),
             SizedBox(
-  width: double.infinity,
-  child: ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.grey[300],
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4)),
-    ),
-    child: const Padding(
-      padding: EdgeInsets.all(10.0),
-      child: Text(
-        'Criar Conta',
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
-      ),
-    ),
-    onPressed: () {
-      Navigator.pushNamed(context, '/register');
-    },
-  ),
-),
-],
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4)),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text(
+                    'Entrar',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                onPressed: () {
+                  if (_formKey.currentState?.validate() ?? false) {
+                    Navigator.pushNamed(context, '/feed'); // Navegar para FeedPage
+                  }
+                },
+              ),
+            ),
+            _gap(),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey[300],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4)),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text(
+                    'Criar Conta',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/register'); // Navegar para a tela de registro
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
